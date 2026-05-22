@@ -13,7 +13,7 @@ import { routes as userRouts } from './users/user.routes';
 const dummyCanMatch: CanMatchFn = (route, segments) => {
   const router = inject(Router);
   const shouldGetAccess = Math.random();
-  if (shouldGetAccess < 0.5) {
+  if (shouldGetAccess < 0.9) {
     return true;
   }
   return new RedirectCommand(router.parseUrl('/unauthorized'));
